@@ -1,0 +1,34 @@
+{
+  "name": "lerna-workspace-template",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna exec yarn install",
+    "dev": "lerna run --parallel start",
+    "build": "lerna run build",
+    "test": "lerna run --parallel test",
+    "new-version": "lerna version --conventional-commits --yes",
+    "diff": "lerna diff",
+    "commit": "git-cz"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "lerna": "^3.22.1",
+    "prettier": "^2.2.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
