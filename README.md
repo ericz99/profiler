@@ -1,61 +1,34 @@
-## Monorepo Template using Lerna & Yarn Workspaces
+# Profiler
 
-> A Monorepo with multiple packages and a shared build, test, and release process.
+> A cooler way to view your github profile and new slick design.
 
-## Content
+![demo](https://i.ibb.co/Mkr9842/ff87ab002be73510158dca93db3cbd75.png)
 
-The project now consists of 2 packages.
+Built with a bunch of things, but some notable mentions:
 
-> Of course you can add more packages, feel free to play around with it.
+-   [React Flip Move](https://github.com/joshwcomeau/react-flip-move)
+-   [Styled Components](https://styled-components.com/)
+-   [Express](https://expressjs.com/)
+-   [Chart.js](https://www.chartjs.org/)
 
--   **api**: boilerplate nodejs express with babel configured for es6+.
--   **web**: create-react-app bootstraped (latest version) + tailwindcss configured
+# Setup
 
-## Tools that are used
+1. Git Clone `https://github.com/ericz99/profiler.git`
+1. `yarn install && yarn run bootstrap`
+1. `yarn run dev`
 
--   [Lerna](https://lernajs.io/)  - The Monorepo manager
--   [Yarn Workspaces](https://yarnpkg.com/lang/en/docs/workspaces/)  -  Sane multi-package management
--   [React](https://reactjs.org/)  -  JavaScript library for user interfaces
--   [Tailwindcss](https://tailwindcss.com/)  -  Easy to use CSS using classNames
--   [Babel](https://babeljs.io/)  -  Compiles next-gen JavaScript
--   [Eslint](https://eslint.org/) - Linting Tool
--   [Prettier](https://prettier.io/) - Format Code Tool
--   [Jest](https://jestjs.io/)  -  Unit/Snapshot Testing
--   [Commitizen](https://commitizen-tools.github.io/commitizen/) - Best commit tool
+# Deploying to Heroku
 
-## Usage
+1. Create new heroku app
 
--   `yarn dev` - To run all `start script` in `/packages`.
--   `yarn test` - Run all linting and unit tests before committing.
+```bash
+heroku create app-name
+```
 
-## Lerna
+2. Push to Heroku
 
--   `yarn new-version` - Only commit conventional commits.
--   `yarn diff` - Only show differences from previous commits vs now.
+```bash
+git push heroku master
+```
 
-## Continuous Integration / Continuous Development
-
-Currently this template only support GitHub Action. But, you are free to add other CI/CD tools, like CircleCI, Jenkins, AWS CodePipeline, and etc...
-
-## Todo
-
--   [ ] Add docker support that separate all packages into services
--   [ ] Add more CI/CD tool (Only support GitHub Action)
-
-## Current Bug
-
--   None
-
-## Template Info
-
-### Author
-
-Eric Zhang
-
-### Version
-
-1.0.0
-
-### License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+3. Once the app is live on heroku, you can now hit http://app-name.heroku.com/

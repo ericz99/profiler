@@ -8,11 +8,14 @@
     "build-server": "babel ./src --out-dir ./build",
     "build": "npm run clean && npm run build-server",
     "start": "nodemon --exec babel-node src/index.js",
-    "start-prod": "node ./build/index.js",
-    "test": "jest"
+    "start-prod": "node ./build/index.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.9",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.17",
