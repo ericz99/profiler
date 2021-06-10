@@ -15,6 +15,8 @@
     "bootstrap": "lerna bootstrap --use-workspaces",
     "dev": "lerna run --parallel start",
     "build": "lerna run build",
+    "client-install": "cd packages/web && yarn install",
+    "server-install": "cd packages/api && yarn install",
     "build-client": "cd packages/web && yarn run build",
     "build-server": "cd packages/api && yarn run build",
     "test": "lerna run --parallel test",
@@ -22,7 +24,7 @@
     "diff": "lerna diff",
     "commit": "git-cz",
     "start": "cd packages/api && yarn run start-prod",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn add -D lerna && yarn run bootstrap && yarn run build-client && yarn run build-server"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn run client-install && yarn run server-install && yarn run build-client && yarn run build-server"
   },
   "license": "MIT",
   "devDependencies": {
