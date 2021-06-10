@@ -27,12 +27,12 @@ if (cluster.isMaster) {
     app.use(express.urlencoded({ extended: false }));
     app.use(cors());
     app.use(
-        express.static(path.resolve(__dirname, '..', '..', '/web', '/build'))
+        express.static(path.resolve(__dirname, '..', '..', 'web', 'build'))
     );
 
     app.get('*', (req, res, next) => {
         res.sendFile(
-            path.resolve(__dirname, '..', '..', '/web', '/build', 'index.html')
+            path.resolve(__dirname, '..', '..', 'web', 'build', 'index.html')
         );
     });
 
