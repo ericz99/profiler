@@ -30,6 +30,12 @@ if (cluster.isMaster) {
         express.static(path.resolve(__dirname, '..', '..', '/web', '/build'))
     );
 
+    app.get('*', (req, res, next) => {
+        res.sendFile(
+            path.resolve(__dirname, '..', '..', '/web', '/build', 'index.html')
+        );
+    });
+
     app.post('/', async (req, res, next) => {
         const userName = req.body.userName;
         const data = await scrapeContribution(userName);
@@ -39,13 +45,6 @@ if (cluster.isMaster) {
             data,
         });
     });
-
-    app.get('*', (req, res, next) => {
-        res.sendFile(
-            path.resolve(__dirname, '..', '..', '/web', '/build', 'index.html')
-        );
-    });
-
     const server = http.createServer(app);
 
     server.listen(config.port, () => {
