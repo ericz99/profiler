@@ -9,4 +9,4 @@ export const API = axios.create({
     },
 });
 
-export default { port: 8080 || process.env.PORT };
+export default { port: process.env.PORT || 8080 };
