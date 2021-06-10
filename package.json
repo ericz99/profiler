@@ -15,7 +15,7 @@
     "diff": "lerna diff",
     "commit": "git-cz",
     "start": "cd packages/api && yarn run start-prod",
-    "heroku-postbuild": "yarn add -D lerna && yarn run bootstrap && yarn build"
+    "heroku-postbuild": "yarn add -D lerna && yarn run bootstrap && yarn run build"
   },
   "license": "MIT",
   "devDependencies": {
